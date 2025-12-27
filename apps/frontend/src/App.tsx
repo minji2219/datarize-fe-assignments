@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import CustomerList from './domain/Customer/components/CustomerList'
-import { PurchaseFrequencyChart } from './domain/Purchase/components/PurchaseFrequencyChart'
+import PurchaseFrequencyChart from './domain/Purchase/components/PurchaseFrequencyChart'
 import Header from './shared/components/layout/Header'
 
 function Dashboard() {
