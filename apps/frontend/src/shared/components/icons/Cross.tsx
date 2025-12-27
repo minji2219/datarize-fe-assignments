@@ -1,4 +1,5 @@
 import { SIZE_MAP, SizeType } from './constants'
+import { THEME } from '@styles/theme'
 
 type Props = {
   size?: SizeType
@@ -17,7 +18,7 @@ function Cross({ size, color, strokeWidth = 2 }: Props) {
     >
       <path
         d="M16.9688 19.0312L7.125 4.96875"
-        stroke={color || 'black'}
+        stroke={color || THEME.COLOR.black}
         strokeWidth={strokeWidth}
         strokeMiterlimit="10"
         strokeLinecap="round"
@@ -25,7 +26,7 @@ function Cross({ size, color, strokeWidth = 2 }: Props) {
       />
       <path
         d="M7.125 19.0312L16.9688 4.96875"
-        stroke={color || 'black'}
+        stroke={color || THEME.COLOR.black}
         strokeWidth={strokeWidth}
         strokeMiterlimit="10"
         strokeLinecap="round"

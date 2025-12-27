@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styled from '@emotion/styled'
 
 import Cross from '@components/icons/Cross'
+import { THEME } from '@styles/theme'
 
 export type Props = {
   opened: boolean
@@ -37,7 +38,7 @@ function Modal({ opened, onClose, children }: Props) {
       <S.Overlay onClick={onClose} />
       <S.Container onClick={(e) => e.stopPropagation()}>
         <S.IconWrapper onClick={onClose}>
-          <Cross size="md" strokeWidth={4} color="#fff" />
+          <Cross size="md" strokeWidth={4} color={THEME.COLOR.white} />
         </S.IconWrapper>
         {children}
       </S.Container>
@@ -66,7 +67,7 @@ const S = {
     transform: translate(-50%, -50%);
     z-index: ${({ theme }) => theme.Z_INDEX.modal};
     padding: ${({ theme }) => theme.SPACING.xl}px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.COLOR.white};
     border-radius: ${({ theme }) => theme.RADIUS.medium};
   `,
   IconWrapper: styled.button`

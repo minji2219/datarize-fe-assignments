@@ -36,7 +36,7 @@ const S = {
   Container: styled.div`
     min-height: 600px;
     padding: ${({ theme }) => theme.SPACING.lg}px;
-    background: white;
+    background: ${({ theme }) => theme.COLOR.white};
     border-radius: ${({ theme }) => theme.RADIUS.medium};
     box-shadow: ${({ theme }) => theme.BOX_SHADOW.light};
     display: flex;

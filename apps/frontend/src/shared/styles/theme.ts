@@ -18,6 +18,8 @@ const FONTS = {
 }
 
 const COLOR = {
+  white: '#ffffff',
+  black: '#000000',
   gray: {
     border: '#dddddd',
     background: '#f5f5f5',

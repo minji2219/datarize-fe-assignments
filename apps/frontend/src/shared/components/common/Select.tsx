@@ -28,7 +28,7 @@ const S = {
   Select: styled.select`
     padding: ${({ theme }) => theme.SPACING.sm}px;
     font: ${({ theme }) => theme.FONTS.body.small};
-    background-color: white;
+    background-color: ${({ theme }) => theme.COLOR.white};
     border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     cursor: pointer;

@@ -15,7 +15,7 @@ const S = {
     width: 100%;
     padding: ${({ theme }) => theme.SPACING.lg}px;
     cursor: pointer;
-    background-color: white;
+    background-color: ${({ theme }) => theme.COLOR.white};
     position: fixed;
     top: 0;
     left: 0;

@@ -1,4 +1,5 @@
 import { SIZE_MAP, SizeType } from './constants'
+import { THEME } from '@styles/theme'
 
 type Props = {
   size?: SizeType
@@ -14,8 +15,13 @@ function Search({ size, color }: Props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="10.9483" cy="10.9483" r="6.44827" stroke={color || '#000'} strokeWidth="2" />
-      <path d="M15.9141 15.9138L21.5003 21.5" stroke={color || '#000'} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="10.9483" cy="10.9483" r="6.44827" stroke={color || THEME.COLOR.black} strokeWidth="2" />
+      <path
+        d="M15.9141 15.9138L21.5003 21.5"
+        stroke={color || THEME.COLOR.black}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   )
 }

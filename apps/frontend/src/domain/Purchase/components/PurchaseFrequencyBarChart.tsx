@@ -30,7 +30,12 @@ function PurchaseFrequencyBarChart({ queryParams }: Props) {
             background={{ fill: THEME.COLOR.gray.background, radius: 8 }}
             radius={[0, 8, 8, 0]}
           >
-            <LabelList dataKey="value" position="insideRight" formatter={(v) => (v ? `${v}건` : '')} fill="#fff" />
+            <LabelList
+              dataKey="value"
+              position="insideRight"
+              formatter={(v) => (v ? `${v}건` : '')}
+              fill={THEME.COLOR.white}
+            />
           </Bar>
         </BarChart>
       </ResponsiveContainer>

@@ -55,7 +55,7 @@ const S = {
     align-items: flex-end;
     padding: ${({ theme }) => theme.SPACING.lg}px;
     gap: ${({ theme }) => theme.GAP.level7};
-    background: white;
+    background: ${({ theme }) => theme.COLOR.white};
     border-radius: ${({ theme }) => theme.RADIUS.medium};
     box-shadow: ${({ theme }) => theme.BOX_SHADOW.light};
   `,

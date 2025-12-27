@@ -28,11 +28,11 @@ const VARIANT = {
   primary: {
     background: THEME.COLOR.primary,
     hover: THEME.COLOR.primaryHover,
-    color: '#fff',
+    color: THEME.COLOR.white,
   },
   secondary: {
     background: THEME.COLOR.gray.background,
-    color: '#000',
+    color: THEME.COLOR.black,
     hover: THEME.COLOR.gray.border,
   },
 }

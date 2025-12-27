@@ -47,7 +47,7 @@ const S = {
     font: ${({ theme }) => theme.FONTS.body.small};
     border-radius: ${({ theme }) => theme.RADIUS.small};
     box-shadow: ${({ theme }) => theme.BOX_SHADOW.medium};
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.COLOR.white};
 
     animation: fade-animation 0.5s ease-out;
 
