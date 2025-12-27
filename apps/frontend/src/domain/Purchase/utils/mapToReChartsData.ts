@@ -1,15 +1,12 @@
 import { PurchaseFrequency } from '../../../api/useGetPurchaseFrequency'
 
 export const mapToRechartsData = (rawData: PurchaseFrequency[]) => {
-  const maxCount = Math.max(...rawData.map((d) => d.count), 0)
-
   return rawData.map(({ range, count }) => {
     const [min, max] = range.split(' - ').map(Number)
 
     return {
       label: formatPriceRange(min, max),
       value: count,
-      background: maxCount - count,
     }
   })
 }

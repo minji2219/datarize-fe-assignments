@@ -21,16 +21,16 @@ function Chart({ queryParams }: Props) {
     <S.Container>
       <ResponsiveContainer width="100%" height={500}>
         <BarChart data={chartData} layout="vertical">
-          <XAxis type="number" hide domain={[0, 'dataMax']} />
+          <XAxis type="number" domain={[0, 'dataMax']} />
           <YAxis type="category" dataKey="label" />
-
-          {/* 실제 값 (앞쪽) */}
-          <Bar dataKey="value" stackId="range" fill={THEME.COLOR.primary} barSize={40} radius={[0, 8, 8, 0]}>
+          <Bar
+            dataKey="value"
+            fill={THEME.COLOR.primary}
+            background={{ fill: THEME.COLOR.gray.background, radius: 8 }}
+            radius={[0, 8, 8, 0]}
+          >
             <LabelList dataKey="value" position="insideRight" formatter={(v) => (v ? `${v}건` : '')} fill="#fff" />
           </Bar>
-
-          {/* 남은 영역 (뒤쪽) */}
-          <Bar dataKey="background" stackId="range" fill="#F3F4F6" barSize={40} radius={[0, 8, 8, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </S.Container>
