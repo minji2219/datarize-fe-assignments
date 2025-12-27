@@ -12,8 +12,11 @@ type Props = {
 function Chart({ queryParams }: Props) {
   const { data: purchaseFrequency } = useGetPurchaseFrequency(queryParams)
 
+  const isDataEmpty = purchaseFrequency.every((data) => data.count === 0)
+
+  if (isDataEmpty) return <S.EmptyMessage>해당 기간에 구매 내역이 없습니다.</S.EmptyMessage>
+
   const chartData = useMemo(() => mapToRechartsData(purchaseFrequency), [purchaseFrequency])
-  /* TODO: 모든 데이터 구매건이 0일때 처리 */
 
   return (
     <S.Container>
@@ -41,5 +44,8 @@ const S = {
   Container: styled.div`
     width: 100%;
     height: 500px;
+  `,
+  EmptyMessage: styled.p`
+    text-align: center;
   `,
 }
