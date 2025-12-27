@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'rec
 import DateFilter from './DateFilter'
 import useGetPurchaseFrequency from '../../../api/useGetPurchaseFrequency'
 import { mapToRechartsData } from '../utils/mapToReChartsData'
-import { THEME } from '../../../styles/theme'
+import { THEME } from '../../../shared/styles/theme'
 
 export function PurchaseFrequencyChart() {
   const [queryParams, setQueryParams] = useState<{ from?: string; to?: string }>({})

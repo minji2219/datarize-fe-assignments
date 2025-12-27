@@ -1,12 +1,18 @@
 import styled from '@emotion/styled'
-import { PurchaseFrequencyChart } from './domain/PurchaseFrequencyChart/components/PurchaseFrequencyChart'
-import Header from './components/layout/Header'
 import { Suspense } from 'react'
+import CustomerList from './domain/Customer/components/CustomerList'
+import { PurchaseFrequencyChart } from './domain/Purchase/components/PurchaseFrequencyChart'
+import Header from './shared/components/layout/Header'
 
 function DashBoard() {
   return (
     <S.Container>
       <Header />
+      {/* TODO: 에러바운더리 */}
+
+      <Suspense>
+        <CustomerList />
+      </Suspense>
       <Suspense>
         <PurchaseFrequencyChart />
       </Suspense>

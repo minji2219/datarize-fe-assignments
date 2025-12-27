@@ -1,12 +1,13 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { apiClient } from './apiClient'
-import { formatStringToDate } from '../utils/formatStringToDate'
+import { formatStringToDate } from '../shared/utils/formatStringToDate'
 
 export type PurchaseFrequency = {
   range: string
   count: number
 }
 
+// TODO: queryFn 분리
 function useGetPurchaseFrequency(queryParams: { from?: string; to?: string }) {
   return useSuspenseQuery({
     queryKey: ['purchase-frequency', queryParams],
