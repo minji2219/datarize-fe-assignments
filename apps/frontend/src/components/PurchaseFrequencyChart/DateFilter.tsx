@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { ChangeEvent } from 'react'
 import DateInput from './DateInput'
 import Button from '../common/Button'
 
@@ -26,7 +25,6 @@ function DateFilter({ onSearch }: Props) {
       <S.Title>가격대별 구매 빈도</S.Title>
       <S.DateFilters>
         <DateInput label="시작 날짜:" name="fromDate" />
-
         <DateInput label="종료 날짜:" name="toDate" />
         <S.ButtonGroup>
           <Button>조회</Button>

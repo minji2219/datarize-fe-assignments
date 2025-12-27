@@ -1694,6 +1694,14 @@ const RAW_RUNTIME_STATE =
           ["csstype", "npm:3.2.3"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:19.2.7", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-react-npm-19.2.7-2ae71602b6-10c0.zip/node_modules/@types/react/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.7"],\
+          ["csstype", "npm:3.2.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@types/react-dom", [\
@@ -1712,6 +1720,16 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@types/react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/react-is", [\
+      ["npm:19.2.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-react-is-npm-19.2.0-d33ff4d231-10c0.zip/node_modules/@types/react-is/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.7"],\
+          ["@types/react-is", "npm:19.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3379,6 +3397,7 @@ const RAW_RUNTIME_STATE =
           ["@tanstack/react-query", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:5.90.12"],\
           ["@types/react", "npm:18.3.27"],\
           ["@types/react-dom", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:18.3.7"],\
+          ["@types/react-is", "npm:19.2.0"],\
           ["@typescript-eslint/eslint-plugin", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:7.18.0"],\
           ["@typescript-eslint/parser", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:7.18.0"],\
           ["@vitejs/plugin-react", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:4.7.0"],\
@@ -3389,6 +3408,7 @@ const RAW_RUNTIME_STATE =
           ["frontend", "workspace:frontend"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:18.3.1"],\
+          ["react-is", "npm:19.2.3"],\
           ["recharts", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:3.6.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["vite", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:5.4.21"]\
@@ -4864,6 +4884,13 @@ const RAW_RUNTIME_STATE =
           ["react-is", "npm:16.13.1"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:19.2.3", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/react-is-npm-19.2.3-1dffc8dfa0-10c0.zip/node_modules/react-is/",\
+        "packageDependencies": [\
+          ["react-is", "npm:19.2.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["react-redux", [\
@@ -4927,7 +4954,7 @@ const RAW_RUNTIME_STATE =
           ["@reduxjs/toolkit", "virtual:b4d3d186bd2cb0d8b8ef623bd9d6c825f84856225081e49b50f8d866f9a3b1159cc958553ba4d1621f8fdbf88c7df50f8ea88a84e49b106331e1d2b755a0fc37#npm:2.11.2"],\
           ["@types/react", "npm:18.3.27"],\
           ["@types/react-dom", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:18.3.7"],\
-          ["@types/react-is", null],\
+          ["@types/react-is", "npm:19.2.0"],\
           ["clsx", "npm:2.1.1"],\
           ["decimal.js-light", "npm:2.5.1"],\
           ["es-toolkit", "npm:1.43.0"],\
@@ -4935,7 +4962,7 @@ const RAW_RUNTIME_STATE =
           ["immer", "npm:10.2.0"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:18.3.1"],\
-          ["react-is", null],\
+          ["react-is", "npm:19.2.3"],\
           ["react-redux", "virtual:b4d3d186bd2cb0d8b8ef623bd9d6c825f84856225081e49b50f8d866f9a3b1159cc958553ba4d1621f8fdbf88c7df50f8ea88a84e49b106331e1d2b755a0fc37#npm:9.2.0"],\
           ["recharts", "virtual:129c180801e06ed395e4da371c76ab19371e66a3c2230c25e2f8aa53715d8f66998096a34403ac325c10f7034d54eaa1a82bf612b0d4bf56a1d1943388d98f11#npm:3.6.0"],\
           ["reselect", "npm:5.1.1"],\

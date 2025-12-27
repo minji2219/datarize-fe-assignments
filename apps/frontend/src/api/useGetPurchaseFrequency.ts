@@ -2,6 +2,11 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import { apiClient } from './apiClient'
 import { formatStringToDate } from '../utils/formatStringToDate'
 
+export type PurchaseFrequency = {
+  range: string
+  count: number
+}
+
 function useGetPurchaseFrequency(queryParams: { from?: string; to?: string }) {
   return useSuspenseQuery({
     queryKey: ['purchase-frequency', queryParams],
@@ -11,7 +16,7 @@ function useGetPurchaseFrequency(queryParams: { from?: string; to?: string }) {
       if (queryParams.to) params.append('to', formatStringToDate(queryParams.to).toISOString())
       const url = `/purchase-frequency${params.toString() ? '?' + params.toString() : ''}`
 
-      const response = await apiClient(url)
+      const response = await apiClient<PurchaseFrequency[]>(url)
       return response.data
     },
   })
