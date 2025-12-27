@@ -25,7 +25,7 @@ const S = {
     width: 100%;
     height: 44px;
     padding: ${({ theme }) => theme.SPACING.sm}px;
-    border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
+    border: 1px solid ${({ theme }) => theme.COLOR.gray[200]};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     font: ${({ theme }) => theme.FONTS.body.medium};
     outline: none;

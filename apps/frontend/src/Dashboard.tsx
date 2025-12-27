@@ -17,7 +17,7 @@ export default Dashboard
 
 const S = {
   Container: styled.div`
-    background-color: ${({ theme }) => theme.COLOR.gray.background};
+    background-color: ${({ theme }) => theme.COLOR.gray[100]};
     display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.GAP.level8};

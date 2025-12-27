@@ -48,7 +48,7 @@ const S = {
     display: flex;
     justify-content: space-between;
     padding: ${({ theme }) => theme.SPACING.lg}px;
-    background-color: ${({ theme }) => theme.COLOR.gray.background};
+    background-color: ${({ theme }) => theme.COLOR.gray[100]};
   `,
   Quantity: styled.p``,
   Price: styled.p`

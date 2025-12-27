@@ -21,9 +21,9 @@ const COLOR = {
   white: '#ffffff',
   black: '#000000',
   gray: {
-    border: '#dddddd',
-    background: '#f5f5f5',
-    text: '#666',
+    100: '#f5f5f5',
+    200: '#dddddd',
+    700: '#666666',
   },
   primary: '#8884d8',
   primaryHover: '#7a76c8',

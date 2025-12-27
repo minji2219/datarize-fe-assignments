@@ -46,14 +46,14 @@ const S = {
     align-items: flex-end;
     padding: ${({ theme }) => theme.SPACING.md}px;
     gap: ${({ theme }) => theme.SPACING.md}px;
-    border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
+    border: 1px solid ${({ theme }) => theme.COLOR.gray[200]};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
   `,
   Image: styled.img`
     width: 80px;
     height: 80px;
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
-    background: ${({ theme }) => theme.COLOR.gray.background};
+    background: ${({ theme }) => theme.COLOR.gray[100]};
     object-fit: cover;
   `,
   Info: styled.div`
@@ -67,11 +67,11 @@ const S = {
   `,
   Quantity: styled.p`
     font: ${({ theme }) => theme.FONTS.body.small};
-    color: ${({ theme }) => theme.COLOR.gray.text};
+    color: ${({ theme }) => theme.COLOR.gray[700]};
   `,
   Date: styled.p`
     font: ${({ theme }) => theme.FONTS.body.small};
-    color: ${({ theme }) => theme.COLOR.gray.text};
+    color: ${({ theme }) => theme.COLOR.gray[700]};
   `,
   Price: styled.p`
     font: ${({ theme }) => theme.FONTS.body.large_bold};

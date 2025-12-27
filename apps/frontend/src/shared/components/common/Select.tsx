@@ -29,7 +29,7 @@ const S = {
     padding: ${({ theme }) => theme.SPACING.sm}px;
     font: ${({ theme }) => theme.FONTS.body.small};
     background-color: ${({ theme }) => theme.COLOR.white};
-    border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
+    border: 1px solid ${({ theme }) => theme.COLOR.gray[200]};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     cursor: pointer;
     transition: all 0.2s;

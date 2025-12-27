@@ -59,17 +59,17 @@ const S = {
     border-collapse: collapse;
   `,
   TableHead: styled.thead`
-    background-color: ${({ theme }) => theme.COLOR.gray.background};
+    background-color: ${({ theme }) => theme.COLOR.gray[100]};
   `,
   TableBody: styled.tbody``,
   TableRow: styled.tr`
-    border-bottom: 1px solid ${({ theme }) => theme.COLOR.gray.border};
+    border-bottom: 1px solid ${({ theme }) => theme.COLOR.gray[200]};
 
     tbody & {
       cursor: pointer;
 
       &:hover {
-        background-color: ${({ theme }) => theme.COLOR.gray.background};
+        background-color: ${({ theme }) => theme.COLOR.gray[100]};
       }
     }
   `,

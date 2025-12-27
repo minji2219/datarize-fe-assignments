@@ -31,9 +31,9 @@ const VARIANT = {
     color: THEME.COLOR.white,
   },
   secondary: {
-    background: THEME.COLOR.gray.background,
+    background: THEME.COLOR.gray[100],
     color: THEME.COLOR.black,
-    hover: THEME.COLOR.gray.border,
+    hover: THEME.COLOR.gray[200],
   },
 }
 

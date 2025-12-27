@@ -29,7 +29,7 @@ const S = {
     width: 40px;
     height: 40px;
 
-    border: 4px solid ${({ theme }) => theme.COLOR.gray.border};
+    border: 4px solid ${({ theme }) => theme.COLOR.gray[200]};
 
     animation: ${spin} 1s linear infinite;
     border-radius: 50%;

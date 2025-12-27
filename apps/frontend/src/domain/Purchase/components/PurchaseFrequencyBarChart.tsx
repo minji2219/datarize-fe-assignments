@@ -27,7 +27,7 @@ function PurchaseFrequencyBarChart({ queryParams }: Props) {
           <Bar
             dataKey="value"
             fill={THEME.COLOR.primary}
-            background={{ fill: THEME.COLOR.gray.background, radius: 8 }}
+            background={{ fill: THEME.COLOR.gray[100], radius: 8 }}
             radius={[0, 8, 8, 0]}
           >
             <LabelList
