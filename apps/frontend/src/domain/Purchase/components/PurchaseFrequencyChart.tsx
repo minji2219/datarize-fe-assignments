@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react'
 import styled from '@emotion/styled'
+
 import DateFilter from './DateFilter'
 import Chart from './Chart'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'

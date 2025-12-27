@@ -1,7 +1,8 @@
-import styled from '@emotion/styled'
 import { Suspense } from 'react'
-import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
+import styled from '@emotion/styled'
+
 import PurchaseList from './PurchaseList'
+import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
 import LoadingSpinner from '@components/icons/LoadingSpinner'
 import { Customer } from '@api/useGetCustomers'
 import { formatPrice } from '@utils/formatPrice'

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
+
+import LoadingSpinner from '@components/icons/LoadingSpinner'
 import { Customer, useGetCustomers } from '@api/useGetCustomers'
 import { formatPrice } from '@utils/formatPrice'
-import LoadingSpinner from '@components/icons/LoadingSpinner'
 
 type Props = {
   queryParams: { sortBy?: 'asc' | 'desc'; name?: string }

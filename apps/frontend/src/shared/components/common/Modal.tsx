@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
 import { ReactNode, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import styled from '@emotion/styled'
+
 import Cross from '@components/icons/Cross'
 
 export type Props = {

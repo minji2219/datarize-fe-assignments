@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts'
 import { useMemo } from 'react'
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts'
+import styled from '@emotion/styled'
+
 import { useGetPurchaseFrequency } from '@api/useGetPurchaseFrequency'
 import { mapToRechartsData } from '@domain/Purchase/utils/mapToReChartsData'
 import { THEME } from '@styles/theme'

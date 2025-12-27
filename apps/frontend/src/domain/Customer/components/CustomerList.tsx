@@ -1,14 +1,15 @@
 import { useState, useMemo } from 'react'
 import styled from '@emotion/styled'
+
 import SearchForm from './SearchForm'
 import Table from './Table'
 import CustomerDetail from './CustomerDetail'
-import { Customer } from '@api/useGetCustomers'
-import useDebounce from '@hooks/useDebounce'
 import Select from '@components/common/Select'
 import Modal from '@components/common/Modal'
-import { useModal } from '@hooks/useModal'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
+import useDebounce from '@hooks/useDebounce'
+import { useModal } from '@hooks/useModal'
+import { Customer } from '@api/useGetCustomers'
 
 type SortType = 'id' | 'asc' | 'desc'
 const SORT_OPTIONS = [
