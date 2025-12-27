@@ -3,16 +3,16 @@ import { Suspense } from 'react'
 import CustomerList from './domain/Customer/components/CustomerList'
 import { PurchaseFrequencyChart } from './domain/Purchase/components/PurchaseFrequencyChart'
 import Header from './shared/components/layout/Header'
+import QueryErrorBoundary from './shared/components/errors/QueryErrorBoundary'
 
 function DashBoard() {
   return (
     <S.Container>
       <Header />
       {/* TODO: 에러바운더리 */}
-
-      <Suspense>
+      <QueryErrorBoundary>
         <CustomerList />
-      </Suspense>
+      </QueryErrorBoundary>
       <Suspense>
         <PurchaseFrequencyChart />
       </Suspense>
