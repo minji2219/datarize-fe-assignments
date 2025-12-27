@@ -14,7 +14,7 @@ const getCustomerPurchases = async (customerId: number): Promise<CustomerPurchas
   return data
 }
 
-export default function useGetCustomerPurchases(customerId: number) {
+export const useGetCustomerPurchases = (customerId: number) => {
   return useSuspenseQuery({
     queryKey: ['customerPurchases', customerId],
     queryFn: () => getCustomerPurchases(customerId),

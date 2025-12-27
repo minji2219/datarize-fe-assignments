@@ -6,7 +6,7 @@ import PurchaseFrequencyBarChart from './PurchaseFrequencyBarChart'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
 import LoadingSpinner from '@components/icons/LoadingSpinner'
 
-export function PurchaseFrequencyChart() {
+function PurchaseFrequencyChart() {
   const [queryParams, setQueryParams] = useState<{ from?: string; to?: string }>({})
 
   const handleSearch = (fromDate: string, toDate: string) => {
@@ -29,6 +29,8 @@ export function PurchaseFrequencyChart() {
     </S.Container>
   )
 }
+
+export default PurchaseFrequencyChart
 
 const S = {
   Container: styled.div`
