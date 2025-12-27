@@ -21,6 +21,7 @@ const COLOR = {
   gray: {
     border: '#dddddd',
     background: '#f5f5f5',
+    text: '#666',
   },
   primary: '#8884d8',
   primaryHover: '#7a76c8',
@@ -57,6 +58,15 @@ const RADIUS = {
   half: '50%',
 }
 
+export const Z_INDEX = {
+  base: 0,
+  below: -1,
+  fixed: 300,
+  overlay: 500,
+  modal: 1000,
+  max: 9999,
+}
+
 const BOX_SHADOW = {
   light: '0px 2px 8px rgba(0, 0, 0, 0.1)',
   medium: '0px 4px 16px rgba(0, 0, 0, 0.1)',
@@ -67,9 +77,10 @@ export const THEME = {
   COLOR,
   FONTS,
   SPACING,
+  GAP,
+  Z_INDEX,
   RADIUS,
   BOX_SHADOW,
-  GAP,
 }
 
 export type CustomTheme = typeof THEME
