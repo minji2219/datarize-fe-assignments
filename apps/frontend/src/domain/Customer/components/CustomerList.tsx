@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react'
 import styled from '@emotion/styled'
-import useGetCustomers from '../../../api/useGetCustomers'
+import { useGetCustomers, Customer } from '../../../api/useGetCustomers'
 import SearchForm from './SearchForm'
 import useDebounce from '../../../shared/hooks/useDebounce'
 import Select from '../../../shared/components/common/Select'
 import Table from './Table'
+import CustomerDetail from './CustomerDetail'
+import Modal from '../../../shared/components/common/Modal'
+import { useModal } from '../../../shared/hooks/useModal'
 
 type SortType = 'id' | 'asc' | 'desc'
 const SORT_OPTIONS = [
@@ -16,7 +19,15 @@ const SORT_OPTIONS = [
 function CustomerList() {
   const [sortBy, setSortBy] = useState<SortType>('id')
   const [inputValue, setInputValue] = useState('')
+  const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null)
   const debouncedQuery = useDebounce(inputValue, 500)
+
+  const { opened, handleOpenModal, handleCloseModal } = useModal()
+
+  const handleSelectCustomer = (customer: Customer) => {
+    setSelectedCustomer(customer)
+    handleOpenModal()
+  }
 
   const queryParams = useMemo(() => {
     const params: { sortBy?: 'asc' | 'desc'; name?: string } = {}
@@ -49,11 +60,17 @@ function CustomerList() {
 
       <S.TableWrapper>
         {customers && customers.length > 0 ? (
-          <Table customers={customers} />
+          <Table customers={customers} onRowClick={handleSelectCustomer} />
         ) : (
           <S.Message>검색 결과가 없습니다.</S.Message>
         )}
       </S.TableWrapper>
+
+      {selectedCustomer && (
+        <Modal opened={opened} onClose={handleCloseModal}>
+          <CustomerDetail customerId={selectedCustomer.id} customerName={selectedCustomer.name} />
+        </Modal>
+      )}
     </S.Container>
   )
 }

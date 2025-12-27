@@ -29,8 +29,8 @@ const getCustomers = async (params: Params = {}): Promise<Customer[]> => {
   const url = queryString ? `/customers?${queryString}` : '/customers'
 
   try {
-    const res = await apiClient(url)
-    return res.data
+    const { data } = await apiClient(url)
+    return data
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 404) {
       return []

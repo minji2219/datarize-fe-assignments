@@ -4,9 +4,10 @@ import { formatPrice } from '../../../shared/utils/formatPrice'
 
 type Props = {
   customers: Customer[]
+  onRowClick: (customer: Customer) => void
 }
 
-function Table({ customers }: Props) {
+function Table({ customers, onRowClick }: Props) {
   return (
     <S.Table>
       <colgroup>
@@ -25,7 +26,7 @@ function Table({ customers }: Props) {
       </S.TableHead>
       <S.TableBody>
         {customers.map((customer) => (
-          <S.TableRow key={customer.id}>
+          <S.TableRow key={customer.id} onClick={() => onRowClick(customer)}>
             <S.TableCell>{customer.id}</S.TableCell>
             <S.TableCell>{customer.name}</S.TableCell>
             <S.TableCell>{customer.count}회</S.TableCell>
@@ -56,8 +57,12 @@ const S = {
       border-bottom: none;
     }
 
-    tbody &:hover {
-      background-color: ${({ theme }) => theme.COLOR.gray.background};
+    tbody & {
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.COLOR.gray.background};
+      }
     }
   `,
   TableHeader: styled.th`
