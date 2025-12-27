@@ -1,4 +1,4 @@
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { apiClient } from './apiClient'
 import { isAxiosError } from 'axios'
 
@@ -39,7 +39,7 @@ const getCustomers = async (params: Params = {}): Promise<Customer[]> => {
   }
 }
 
-export default function useGetCustomers(params: Params = {}) {
+export const useGetCustomers = (params: Params = {}) => {
   return useQuery({
     queryKey: ['customers', params],
     queryFn: () => getCustomers(params),

@@ -9,13 +9,15 @@ function DashBoard() {
   return (
     <S.Container>
       <Header />
-      {/* TODO: 에러바운더리 */}
       <QueryErrorBoundary>
         <CustomerList />
       </QueryErrorBoundary>
-      <Suspense>
-        <PurchaseFrequencyChart />
-      </Suspense>
+
+      <QueryErrorBoundary>
+        <Suspense>
+          <PurchaseFrequencyChart />
+        </Suspense>
+      </QueryErrorBoundary>
     </S.Container>
   )
 }

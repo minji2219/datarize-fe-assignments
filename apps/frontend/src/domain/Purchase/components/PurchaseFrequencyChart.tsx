@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts'
 import DateFilter from './DateFilter'
-import useGetPurchaseFrequency from '../../../api/useGetPurchaseFrequency'
+import { useGetPurchaseFrequency } from '../../../api/useGetPurchaseFrequency'
 import { mapToRechartsData } from '../utils/mapToReChartsData'
 import { THEME } from '../../../shared/styles/theme'
 

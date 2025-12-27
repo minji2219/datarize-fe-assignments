@@ -8,7 +8,7 @@ export type PurchaseFrequency = {
 }
 
 // TODO: queryFn 분리
-function useGetPurchaseFrequency(queryParams: { from?: string; to?: string }) {
+export const useGetPurchaseFrequency = (queryParams: { from?: string; to?: string }) => {
   return useSuspenseQuery({
     queryKey: ['purchase-frequency', queryParams],
     queryFn: async () => {
@@ -22,5 +22,3 @@ function useGetPurchaseFrequency(queryParams: { from?: string; to?: string }) {
     },
   })
 }
-
-export default useGetPurchaseFrequency
