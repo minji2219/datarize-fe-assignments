@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from '@emotion/styled'
 
 import SearchForm from './SearchForm'
@@ -7,9 +6,8 @@ import CustomerDetail from './CustomerDetail'
 import Select from '@components/common/Select'
 import Modal from '@components/common/Modal'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
-import { useModal } from '@hooks/useModal'
-import { Customer } from '@api/useGetCustomers'
 import { useCustomerFilter, SortType } from '@domain/Customer/hooks/useCustomerFilter'
+import { useCustomerDetail } from '@domain/Customer/hooks/useCustomerDetail'
 
 const SORT_OPTIONS = [
   { value: 'id', label: 'ID 순' },
@@ -18,14 +16,8 @@ const SORT_OPTIONS = [
 ]
 
 function CustomerList() {
-  const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null)
   const { sortBy, handleSortChange, inputValue, handleInputChange, queryParams } = useCustomerFilter()
-  const { opened, handleOpenModal, handleCloseModal } = useModal()
-
-  const handleSelectCustomer = (customer: Customer) => {
-    setSelectedCustomer(customer)
-    handleOpenModal()
-  }
+  const { selectedCustomer, isModalOpen, handleSelectCustomer, handleCloseModal } = useCustomerDetail()
 
   return (
     <S.Container>
@@ -46,7 +38,7 @@ function CustomerList() {
       </QueryErrorBoundary>
 
       {selectedCustomer && (
-        <Modal opened={opened} onClose={handleCloseModal}>
+        <Modal opened={isModalOpen} onClose={handleCloseModal}>
           <CustomerDetail customer={selectedCustomer} />
         </Modal>
       )}
