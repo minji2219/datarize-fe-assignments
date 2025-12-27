@@ -12,9 +12,13 @@ export function PurchaseFrequencyChart() {
     setQueryParams({ from: fromDate, to: toDate })
   }
 
+  const handleReset = () => {
+    setQueryParams({})
+  }
+
   return (
     <S.Container>
-      <DateFilter onSearch={handleSearch} />
+      <DateFilter onSearch={handleSearch} onReset={handleReset} />
 
       <QueryErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>

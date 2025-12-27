@@ -2,13 +2,15 @@ import styled from '@emotion/styled'
 import DateInput from './DateInput'
 import Button from '../../../shared/components/common/Button'
 import { useShowToast } from '../../../shared/provider/ToastProivder'
+import { useRef } from 'react'
 
 type Props = {
   onSearch: (fromDate: string, toDate: string) => void
-  // onReset: () => void
+  onReset: () => void
 }
 
-function DateFilter({ onSearch }: Props) {
+function DateFilter({ onSearch, onReset }: Props) {
+  const formRef = useRef<HTMLFormElement>(null)
   const showToast = useShowToast()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,17 +33,22 @@ function DateFilter({ onSearch }: Props) {
     onSearch(fromDate, toDate)
   }
 
+  const handleResetClick = () => {
+    formRef.current?.reset()
+    onReset()
+  }
+
   return (
-    <S.Container onSubmit={handleSubmit}>
+    <S.Container ref={formRef} onSubmit={handleSubmit}>
       <S.Title>가격대별 구매 빈도</S.Title>
       <S.DateFilters>
         <DateInput label="시작 날짜:" name="fromDate" />
         <DateInput label="종료 날짜:" name="toDate" />
         <S.ButtonGroup>
           <Button>조회</Button>
-          {/* <Button onClick={onReset} variant="secondary">
+          <Button type="button" onClick={handleResetClick} variant="secondary">
             초기화
-          </Button> */}
+          </Button>
         </S.ButtonGroup>
       </S.DateFilters>
     </S.Container>
