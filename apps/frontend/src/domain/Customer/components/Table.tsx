@@ -1,13 +1,19 @@
 import styled from '@emotion/styled'
-import { Customer } from '../../../api/useGetCustomers'
+import { Customer, useGetCustomers } from '../../../api/useGetCustomers'
 import { formatPrice } from '../../../shared/utils/formatPrice'
+import LoadingSpinner from '../../../shared/components/icons/LoadingSpinner'
 
 type Props = {
-  customers: Customer[]
+  queryParams: { sortBy?: 'asc' | 'desc'; name?: string }
   onRowClick: (customer: Customer) => void
 }
 
-function Table({ customers, onRowClick }: Props) {
+function Table({ queryParams, onRowClick }: Props) {
+  const { data: customers, isLoading } = useGetCustomers(queryParams)
+
+  if (isLoading) return <LoadingSpinner />
+
+  if (!customers || customers.length === 0) return <S.Message>검색 결과가 없습니다.</S.Message>
   return (
     <S.Table>
       <colgroup>
@@ -41,6 +47,11 @@ function Table({ customers, onRowClick }: Props) {
 export default Table
 
 const S = {
+  Message: styled.p`
+    font: ${({ theme }) => theme.FONTS.body.medium};
+    text-align: center;
+    margin-top: ${({ theme }) => theme.SPACING.xl}px;
+  `,
   Table: styled.table`
     width: 100%;
     table-layout: fixed;
@@ -52,10 +63,6 @@ const S = {
   TableBody: styled.tbody``,
   TableRow: styled.tr`
     border-bottom: 1px solid ${({ theme }) => theme.COLOR.gray.border};
-
-    &:last-child {
-      border-bottom: none;
-    }
 
     tbody & {
       cursor: pointer;

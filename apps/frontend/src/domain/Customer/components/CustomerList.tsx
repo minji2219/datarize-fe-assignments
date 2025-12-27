@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import styled from '@emotion/styled'
-import { useGetCustomers, Customer } from '../../../api/useGetCustomers'
+import { Customer } from '../../../api/useGetCustomers'
 import SearchForm from './SearchForm'
 import useDebounce from '../../../shared/hooks/useDebounce'
 import Select from '../../../shared/components/common/Select'
@@ -8,6 +8,7 @@ import Table from './Table'
 import CustomerDetail from './CustomerDetail'
 import Modal from '../../../shared/components/common/Modal'
 import { useModal } from '../../../shared/hooks/useModal'
+import QueryErrorBoundary from '../../../shared/components/errors/QueryErrorBoundary'
 
 type SortType = 'id' | 'asc' | 'desc'
 const SORT_OPTIONS = [
@@ -43,9 +44,6 @@ function CustomerList() {
     return params
   }, [sortBy, debouncedQuery])
 
-  const { data: customers, isLoading } = useGetCustomers(queryParams)
-
-  if (isLoading) return <div>loading...</div>
   return (
     <S.Container>
       <SearchForm value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
@@ -58,13 +56,11 @@ function CustomerList() {
         ))}
       </Select>
 
-      <S.TableWrapper>
-        {customers && customers.length > 0 ? (
-          <Table customers={customers} onRowClick={handleSelectCustomer} />
-        ) : (
-          <S.Message>검색 결과가 없습니다.</S.Message>
-        )}
-      </S.TableWrapper>
+      <QueryErrorBoundary>
+        <S.TableWrapper>
+          <Table queryParams={queryParams} onRowClick={handleSelectCustomer} />
+        </S.TableWrapper>
+      </QueryErrorBoundary>
 
       {selectedCustomer && (
         <Modal opened={opened} onClose={handleCloseModal}>
@@ -92,10 +88,5 @@ const S = {
     width: 100%;
     height: 500px;
     overflow-y: scroll;
-  `,
-  Message: styled.p`
-    font: ${({ theme }) => theme.FONTS.body.medium};
-    text-align: center;
-    margin-top: ${({ theme }) => theme.SPACING.xl}px;
   `,
 }

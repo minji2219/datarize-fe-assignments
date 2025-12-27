@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Suspense } from 'react'
 import QueryErrorBoundary from '../../../shared/components/errors/QueryErrorBoundary'
 import PurchaseList from './PurchaseList'
+import LoadingSpinner from '../../../shared/components/icons/LoadingSpinner'
 
 type Props = {
   customerId: number
@@ -14,7 +15,7 @@ function CustomerDetail({ customerId, customerName }: Props) {
       <S.Title>{customerName}님의 구매 내역</S.Title>
 
       <QueryErrorBoundary>
-        <Suspense fallback={<div>로딩 중...</div>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <PurchaseList customerId={customerId} />
         </Suspense>
       </QueryErrorBoundary>
