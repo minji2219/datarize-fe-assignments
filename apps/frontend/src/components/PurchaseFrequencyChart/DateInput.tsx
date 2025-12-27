@@ -1,17 +1,14 @@
 import styled from '@emotion/styled'
-import { ChangeEvent } from 'react'
 
 type Props = {
   label: string
-  value: string
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void
-}
+} & React.ComponentProps<'input'>
 
-function DateInput({ label, value, onChange }: Props) {
+function DateInput({ label, ...props }: Props) {
   return (
     <S.Container>
       <S.Label>{label}</S.Label>
-      <S.Date type="date" value={value} onChange={onChange} />
+      <S.Date type="date" {...props} />
     </S.Container>
   )
 }

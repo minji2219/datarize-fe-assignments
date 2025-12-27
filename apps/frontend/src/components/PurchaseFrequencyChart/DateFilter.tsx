@@ -4,25 +4,35 @@ import DateInput from './DateInput'
 import Button from '../common/Button'
 
 type Props = {
-  fromDate: string
-  toDate: string
-  onChangeFromDate: (event: ChangeEvent<HTMLInputElement>) => void
-  onChangeToDate: (event: ChangeEvent<HTMLInputElement>) => void
+  onSearch: (fromDate: string, toDate: string) => void
+  // onReset: () => void
 }
 
-function DateFilter({ fromDate, toDate, onChangeFromDate, onChangeToDate }: Props) {
+function DateFilter({ onSearch }: Props) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+
+    const fromDate = formData.get('fromDate') as string
+    const toDate = formData.get('toDate') as string
+
+    // TODO: 날짜 유효성 검사
+    // 두개 다 값이 있어야하고 선행 관계있어야함
+    onSearch(fromDate, toDate)
+  }
+
   return (
-    <S.Container>
+    <S.Container onSubmit={handleSubmit}>
       <S.Title>가격대별 구매 빈도</S.Title>
       <S.DateFilters>
-        <DateInput label="시작 날짜:" value={fromDate} onChange={onChangeFromDate} />
+        <DateInput label="시작 날짜:" name="fromDate" />
 
-        <DateInput label="종료 날짜:" value={toDate} onChange={onChangeToDate} />
+        <DateInput label="종료 날짜:" name="toDate" />
         <S.ButtonGroup>
-          <Button onClick={() => {}}>조회</Button>
-          <Button onClick={() => {}} variant="secondary">
+          <Button>조회</Button>
+          {/* <Button onClick={onReset} variant="secondary">
             초기화
-          </Button>
+          </Button> */}
         </S.ButtonGroup>
       </S.DateFilters>
     </S.Container>
@@ -32,7 +42,7 @@ function DateFilter({ fromDate, toDate, onChangeFromDate, onChangeToDate }: Prop
 export default DateFilter
 
 const S = {
-  Container: styled.div`
+  Container: styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
