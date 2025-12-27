@@ -21,6 +21,7 @@ const S = {
     display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.GAP.level2};
+    position: relative;
   `,
   Label: styled.label`
     font: ${({ theme }) => theme.FONTS.body.small_bold};
@@ -33,8 +34,16 @@ const S = {
     transition: border-color 0.2s;
     font: ${({ theme }) => theme.FONTS.body.medium};
 
-    &:focus {
-      border-color: ${({ theme }) => theme.COLOR.primary};
+    &::-webkit-calendar-picker-indicator {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0;
     }
   `,
 }

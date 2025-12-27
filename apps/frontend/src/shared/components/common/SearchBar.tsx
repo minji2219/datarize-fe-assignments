@@ -22,8 +22,8 @@ const S = {
   `,
   SearchInput: styled.input`
     width: 100%;
-    height: 40px;
-    padding: 0 ${({ theme }) => theme.SPACING.md}px;
+    height: 44px;
+    padding: ${({ theme }) => theme.SPACING.sm}px;
     font: ${({ theme }) => theme.FONTS.body.medium};
     border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
@@ -37,7 +37,7 @@ const S = {
   `,
   SearchIcon: styled.div`
     position: absolute;
-    top: 8px;
+    top: 10px;
     right: 10px;
   `,
 }

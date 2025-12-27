@@ -13,10 +13,9 @@ function Chart({ queryParams }: Props) {
   const { data: purchaseFrequency } = useGetPurchaseFrequency(queryParams)
 
   const isDataEmpty = purchaseFrequency.every((data) => data.count === 0)
+  const chartData = useMemo(() => mapToRechartsData(purchaseFrequency), [purchaseFrequency])
 
   if (isDataEmpty) return <S.EmptyMessage>해당 기간에 구매 내역이 없습니다.</S.EmptyMessage>
-
-  const chartData = useMemo(() => mapToRechartsData(purchaseFrequency), [purchaseFrequency])
 
   return (
     <S.Container>
