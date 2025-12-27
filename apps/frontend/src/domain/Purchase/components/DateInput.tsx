@@ -17,11 +17,11 @@ export default DateInput
 
 const S = {
   Container: styled.div`
-    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: ${({ theme }) => theme.GAP.level2};
-    position: relative;
   `,
   Label: styled.label`
     font: ${({ theme }) => theme.FONTS.body.small_bold};
@@ -30,9 +30,9 @@ const S = {
     padding: ${({ theme }) => theme.SPACING.sm}px;
     border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
+    font: ${({ theme }) => theme.FONTS.body.medium};
     outline: none;
     transition: border-color 0.2s;
-    font: ${({ theme }) => theme.FONTS.body.medium};
 
     &::-webkit-calendar-picker-indicator {
       position: absolute;

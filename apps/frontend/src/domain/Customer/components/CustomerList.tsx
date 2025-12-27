@@ -76,14 +76,14 @@ export default CustomerList
 
 const S = {
   Container: styled.div`
-    padding: ${({ theme }) => theme.SPACING.lg}px;
-    background: white;
-    border-radius: ${({ theme }) => theme.RADIUS.medium};
-    box-shadow: ${({ theme }) => theme.BOX_SHADOW.light};
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding: ${({ theme }) => theme.SPACING.lg}px;
     gap: ${({ theme }) => theme.GAP.level7};
+    background: white;
+    border-radius: ${({ theme }) => theme.RADIUS.medium};
+    box-shadow: ${({ theme }) => theme.BOX_SHADOW.light};
   `,
   TableWrapper: styled.div`
     width: 100%;

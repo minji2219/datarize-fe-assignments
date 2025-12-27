@@ -45,8 +45,8 @@ const S = {
     width: 100%;
   `,
   EmptyMessage: styled.p`
-    text-align: center;
     padding: ${({ theme }) => theme.SPACING.xl}px;
     font: ${({ theme }) => theme.FONTS.body.medium};
+    text-align: center;
   `,
 }

@@ -41,14 +41,15 @@ const S = {
   Container: styled.button<{ size: 'sm' | 'lg'; variant: 'primary' | 'secondary' }>`
     width: ${({ size }) => SIZE[size].width};
     height: 40px;
-    font: ${({ size }) => SIZE[size].font};
     padding: ${({ theme }) => theme.SPACING.sm}px 0;
-    background-color: ${({ variant }) => TYPE[variant].background};
-    color: ${({ variant }) => TYPE[variant].color};
-    border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     border: none;
+    border-radius: ${({ theme }) => theme.RADIUS.xsmall};
+    font: ${({ size }) => SIZE[size].font};
+    color: ${({ variant }) => TYPE[variant].color};
+    background-color: ${({ variant }) => TYPE[variant].background};
     cursor: pointer;
     transition: background-color 0.2s;
+
     &:hover {
       background-color: ${({ variant }) => TYPE[variant].hover};
     }

@@ -35,10 +35,10 @@ export default CustomerDetail
 
 const S = {
   Container: styled.div`
-    min-width: 600px;
-    max-height: 70vh;
     display: flex;
     flex-direction: column;
+    min-width: 600px;
+    max-height: 70vh;
     gap: ${({ theme }) => theme.SPACING.lg}px;
   `,
   Title: styled.h2`
@@ -47,7 +47,6 @@ const S = {
   Summary: styled.div`
     display: flex;
     justify-content: space-between;
-
     padding: ${({ theme }) => theme.SPACING.lg}px;
     background-color: ${({ theme }) => theme.COLOR.gray.background};
   `,

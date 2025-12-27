@@ -49,9 +49,9 @@ export default Table
 
 const S = {
   Message: styled.p`
+    margin-top: ${({ theme }) => theme.SPACING.xl}px;
     font: ${({ theme }) => theme.FONTS.body.medium};
     text-align: center;
-    margin-top: ${({ theme }) => theme.SPACING.xl}px;
   `,
   Table: styled.table`
     width: 100%;

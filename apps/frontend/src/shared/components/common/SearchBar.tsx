@@ -25,12 +25,12 @@ const S = {
     width: 100%;
     height: 44px;
     padding: ${({ theme }) => theme.SPACING.sm}px;
-    font: ${({ theme }) => theme.FONTS.body.medium};
     border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
+    font: ${({ theme }) => theme.FONTS.body.medium};
     outline: none;
-    transition: border-color 0.2s;
     box-sizing: border-box;
+    transition: border-color 0.2s;
 
     &:focus {
       border-color: ${({ theme }) => theme.COLOR.primary};

@@ -60,19 +60,19 @@ export default DateFilter
 
 const S = {
   Container: styled.form`
-    width: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: ${({ theme }) => theme.GAP.level4};
   `,
   Title: styled.h2`
     font: ${({ theme }) => theme.FONTS.heading.medium};
   `,
   DateFilters: styled.div`
-    width: 100%;
     display: flex;
-    gap: ${({ theme }) => theme.GAP.level5};
     align-items: end;
+    width: 100%;
+    gap: ${({ theme }) => theme.GAP.level5};
   `,
   ButtonGroup: styled.div`
     display: flex;

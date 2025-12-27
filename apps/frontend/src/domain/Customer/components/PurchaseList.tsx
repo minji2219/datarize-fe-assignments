@@ -31,9 +31,9 @@ export default PurchaseList
 
 const S = {
   EmptyMessage: styled.div`
-    text-align: center;
     padding: ${({ theme }) => theme.SPACING.xl}px;
     font: ${({ theme }) => theme.FONTS.body.medium};
+    text-align: center;
   `,
   Container: styled.div`
     display: flex;
@@ -44,21 +44,21 @@ const S = {
   Item: styled.div`
     display: flex;
     align-items: flex-end;
-    gap: ${({ theme }) => theme.SPACING.md}px;
     padding: ${({ theme }) => theme.SPACING.md}px;
+    gap: ${({ theme }) => theme.SPACING.md}px;
     border: 1px solid ${({ theme }) => theme.COLOR.gray.border};
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
   `,
   Image: styled.img`
     width: 80px;
     height: 80px;
-    object-fit: cover;
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     background: ${({ theme }) => theme.COLOR.gray.background};
+    object-fit: cover;
   `,
   Info: styled.div`
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: ${({ theme }) => theme.SPACING.xs}px;
   `,
