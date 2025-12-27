@@ -23,7 +23,7 @@ function PurchaseFrequencyBarChart({ queryParams }: Props) {
       <ResponsiveContainer width="100%" height={500}>
         <BarChart data={chartData} layout="vertical">
           <XAxis type="number" domain={[0, 'dataMax']} />
-          <YAxis type="category" dataKey="label" />
+          <YAxis type="category" dataKey="label" width={90} />
           <Bar
             dataKey="value"
             fill={THEME.COLOR.primary}
