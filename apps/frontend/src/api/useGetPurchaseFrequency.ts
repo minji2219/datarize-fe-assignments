@@ -7,18 +7,32 @@ export type PurchaseFrequency = {
   count: number
 }
 
-// TODO: queryFn 분리
-export const useGetPurchaseFrequency = (queryParams: { from?: string; to?: string }) => {
+type Params = {
+  from?: string
+  to?: string
+}
+
+const getPurchaseFrequency = async (params: Params): Promise<PurchaseFrequency[]> => {
+  const searchParams = new URLSearchParams()
+
+  if (params.from) {
+    searchParams.append('from', formatStringToDate(params.from).toISOString())
+  }
+
+  if (params.to) {
+    searchParams.append('to', formatStringToDate(params.to).toISOString())
+  }
+
+  const queryString = searchParams.toString()
+  const url = queryString ? `/purchase-frequency?${queryString}` : '/purchase-frequency'
+
+  const response = await apiClient<PurchaseFrequency[]>(url)
+  return response.data
+}
+
+export const useGetPurchaseFrequency = (queryParams: Params) => {
   return useSuspenseQuery({
     queryKey: ['purchase-frequency', queryParams],
-    queryFn: async () => {
-      const params = new URLSearchParams()
-      if (queryParams.from) params.append('from', formatStringToDate(queryParams.from).toISOString())
-      if (queryParams.to) params.append('to', formatStringToDate(queryParams.to).toISOString())
-      const url = `/purchase-frequency${params.toString() ? '?' + params.toString() : ''}`
-
-      const response = await apiClient<PurchaseFrequency[]>(url)
-      return response.data
-    },
+    queryFn: () => getPurchaseFrequency(queryParams),
   })
 }
