@@ -46,6 +46,10 @@ const S = {
     align-items: end;
     width: 100%;
     gap: ${({ theme }) => theme.GAP.level5};
+
+    @media (max-width: 680px) {
+      flex-direction: column;
+    }
   `,
   ButtonGroup: styled.div`
     display: flex;
