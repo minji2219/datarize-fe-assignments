@@ -19,7 +19,7 @@ function Chart({ queryParams }: Props) {
 
   return (
     <S.Container>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height={500}>
         <BarChart data={chartData} layout="vertical">
           <XAxis type="number" hide domain={[0, 'dataMax']} />
           <YAxis type="category" dataKey="label" />
@@ -42,9 +42,10 @@ export default Chart
 const S = {
   Container: styled.div`
     width: 100%;
-    height: 500px;
   `,
   EmptyMessage: styled.p`
     text-align: center;
+    padding: ${({ theme }) => theme.SPACING.xl}px;
+    font: ${({ theme }) => theme.FONTS.body.medium};
   `,
 }
