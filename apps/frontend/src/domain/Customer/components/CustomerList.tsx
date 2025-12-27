@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import styled from '@emotion/styled'
 
 import SearchForm from './SearchForm'
@@ -7,11 +7,10 @@ import CustomerDetail from './CustomerDetail'
 import Select from '@components/common/Select'
 import Modal from '@components/common/Modal'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
-import useDebounce from '@hooks/useDebounce'
 import { useModal } from '@hooks/useModal'
 import { Customer } from '@api/useGetCustomers'
+import { useCustomerFilter, SortType } from '@domain/Customer/hooks/useCustomerFilter'
 
-type SortType = 'id' | 'asc' | 'desc'
 const SORT_OPTIONS = [
   { value: 'id', label: 'ID 순' },
   { value: 'desc', label: '구매금액 높은순' },
@@ -19,11 +18,8 @@ const SORT_OPTIONS = [
 ]
 
 function CustomerList() {
-  const [sortBy, setSortBy] = useState<SortType>('id')
-  const [inputValue, setInputValue] = useState('')
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null)
-  const debouncedQuery = useDebounce(inputValue, 500)
-
+  const { sortBy, handleSortChange, inputValue, handleInputChange, queryParams } = useCustomerFilter()
   const { opened, handleOpenModal, handleCloseModal } = useModal()
 
   const handleSelectCustomer = (customer: Customer) => {
@@ -31,25 +27,11 @@ function CustomerList() {
     handleOpenModal()
   }
 
-  const queryParams = useMemo(() => {
-    const params: { sortBy?: 'asc' | 'desc'; name?: string } = {}
-
-    if (sortBy !== 'id') {
-      params.sortBy = sortBy
-    }
-
-    if (debouncedQuery) {
-      params.name = debouncedQuery
-    }
-
-    return params
-  }, [sortBy, debouncedQuery])
-
   return (
     <S.Container>
-      <SearchForm value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+      <SearchForm value={inputValue} onChange={handleInputChange} />
 
-      <Select value={sortBy} onChange={(e) => setSortBy(e.target.value as SortType)}>
+      <Select value={sortBy} onChange={(e) => handleSortChange(e.target.value as SortType)}>
         {SORT_OPTIONS.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
