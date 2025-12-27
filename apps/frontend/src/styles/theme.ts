@@ -19,8 +19,11 @@ const FONTS = {
 
 const COLOR = {
   gray: {
+    border: '#dddddd',
     background: '#f5f5f5',
   },
+  primary: '#8884d8',
+  primaryHover: '#7a76c8',
 }
 
 const SPACING = {
@@ -31,10 +34,42 @@ const SPACING = {
   xl: 32,
 }
 
+const GAP = {
+  level1: '2px',
+  level2: '4px',
+  level3: '8px',
+  level4: '12px',
+  level5: '16px',
+  level6: '20px',
+  level7: '24px',
+  level8: '36px',
+  level9: '40px',
+  level10: '48px',
+  level11: '64px',
+  level12: '80px',
+}
+
+const RADIUS = {
+  xsmall: '6px',
+  small: '14px',
+  medium: '20px',
+  large: '24px',
+  half: '50%',
+}
+
+const BOX_SHADOW = {
+  light: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+  medium: '0px 4px 16px rgba(0, 0, 0, 0.1)',
+  heavy: '0px 8px 24px rgba(0, 0, 0, 0.2)',
+}
+
 export const THEME = {
   COLOR,
   FONTS,
   SPACING,
+  RADIUS,
+  BOX_SHADOW,
+  GAP,
 }
 
 export type CustomTheme = typeof THEME

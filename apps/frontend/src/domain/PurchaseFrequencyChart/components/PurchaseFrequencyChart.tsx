@@ -2,9 +2,9 @@ import { useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts'
 import DateFilter from './DateFilter'
-import useGetPurchaseFrequency from '../../api/useGetPurchaseFrequency'
-import { mapToRechartsData } from '../../domain/PurchaseFrequencyChart/utils/mapToReChartsData'
-import { THEME } from '../../styles/theme'
+import useGetPurchaseFrequency from '../../../api/useGetPurchaseFrequency'
+import { mapToRechartsData } from '../utils/mapToReChartsData'
+import { THEME } from '../../../styles/theme'
 
 export function PurchaseFrequencyChart() {
   const [queryParams, setQueryParams] = useState<{ from?: string; to?: string }>({})

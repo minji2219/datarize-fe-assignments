@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import DateInput from './DateInput'
-import Button from '../common/Button'
+import Button from '../../../components/common/Button'
 
 type Props = {
   onSearch: (fromDate: string, toDate: string) => void
