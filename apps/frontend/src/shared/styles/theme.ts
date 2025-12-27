@@ -25,6 +25,10 @@ const COLOR = {
   },
   primary: '#8884d8',
   primaryHover: '#7a76c8',
+
+  success: '#4CAF50',
+  error: '#F44336',
+  warn: '#ffc107',
 }
 
 const SPACING = {
@@ -64,6 +68,7 @@ export const Z_INDEX = {
   fixed: 300,
   overlay: 500,
   modal: 1000,
+  toast: 1200,
   max: 9999,
 }
 
