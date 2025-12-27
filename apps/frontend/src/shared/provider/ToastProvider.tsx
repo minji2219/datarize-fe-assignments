@@ -20,7 +20,7 @@ const ToastContext = createContext<ContextType | undefined>(undefined)
 function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastStateType[]>([])
 
-  const showToast = useCallback((toast: ToastType, timeSet: number = 3000) => {
+  const showToast = useCallback((toast: ToastType, timeSet: number = 2000) => {
     const id: `${string}-${string}` = `${generateRandomNumber(10000, 4)}-${generateRandomNumber(10000, 4)}`
 
     setToasts((prev) => [{ ...toast, id: id, timeSet: timeSet }, ...prev])

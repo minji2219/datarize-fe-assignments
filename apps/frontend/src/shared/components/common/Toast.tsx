@@ -16,8 +16,6 @@ const COLOR_MAP = {
   WARN: THEME.COLOR.warn,
 }
 
-export const DEFAULT_TIME = 2000
-
 function Toast({ message, mode, onRemove, timeSet }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
