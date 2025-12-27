@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useModal } from '@hooks/useModal'
 import { Customer } from '@api/useGetCustomers'
 
-export function useCustomerDetail() {
+export const useCustomerDetail = () => {
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null)
   const { opened, handleOpenModal, handleCloseModal } = useModal()
 

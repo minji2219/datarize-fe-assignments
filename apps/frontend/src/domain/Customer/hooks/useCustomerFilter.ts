@@ -4,7 +4,7 @@ import useDebounce from '@hooks/useDebounce'
 
 export type SortType = 'id' | 'asc' | 'desc'
 
-export function useCustomerFilter() {
+export const useCustomerFilter = () => {
   const [sortBy, setSortBy] = useState<SortType>('id')
   const [inputValue, setInputValue] = useState('')
   const debouncedQuery = useDebounce(inputValue, 500)

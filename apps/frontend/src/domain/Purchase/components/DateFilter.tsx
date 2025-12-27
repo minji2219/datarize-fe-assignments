@@ -1,9 +1,8 @@
-import { useRef } from 'react'
 import styled from '@emotion/styled'
 
 import DateInput from './DateInput'
 import Button from '@components/common/Button'
-import { useShowToast } from '@/shared/provider/ToastProivder'
+import { useDateRangeFilter } from '@domain/Purchase/hooks/useDateRangeFilter'
 
 type Props = {
   onSearch: (fromDate: string, toDate: string) => void
@@ -11,33 +10,7 @@ type Props = {
 }
 
 function DateFilter({ onSearch, onReset }: Props) {
-  const formRef = useRef<HTMLFormElement>(null)
-  const showToast = useShowToast()
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-
-    const fromDate = formData.get('fromDate') as string
-    const toDate = formData.get('toDate') as string
-
-    if (!fromDate || !toDate) {
-      showToast({ mode: 'WARN', message: '시작 날짜와 종료 날짜를 모두 입력해주세요.' })
-      return
-    }
-
-    if (fromDate > toDate) {
-      showToast({ mode: 'WARN', message: '시작 날짜는 종료 날짜보다 이전이어야 합니다.' })
-      return
-    }
-
-    onSearch(fromDate, toDate)
-  }
-
-  const handleResetClick = () => {
-    formRef.current?.reset()
-    onReset()
-  }
+  const { formRef, handleSubmit, handleReset } = useDateRangeFilter({ onSearch, onReset })
 
   return (
     <S.Container ref={formRef} onSubmit={handleSubmit}>
@@ -47,7 +20,7 @@ function DateFilter({ onSearch, onReset }: Props) {
         <DateInput label="종료 날짜:" name="toDate" />
         <S.ButtonGroup>
           <Button>조회</Button>
-          <Button type="button" onClick={handleResetClick} variant="secondary">
+          <Button type="button" onClick={handleReset} variant="secondary">
             초기화
           </Button>
         </S.ButtonGroup>

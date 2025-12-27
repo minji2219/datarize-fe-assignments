@@ -6,7 +6,7 @@ import { ThemeProvider } from '@emotion/react'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from './api/queryClient.ts'
 import { THEME } from './shared/styles/theme.ts'
-import ToastProvider from './shared/provider/ToastProivder.tsx'
+import ToastProvider from './shared/provider/ToastProvider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
