@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 import SearchForm from './SearchForm'
-import Table from './Table'
+import CustomerTable from './CustomerTable'
 import CustomerDetail from './CustomerDetail'
 import Select from '@components/common/Select'
 import Modal from '@components/common/Modal'
@@ -33,7 +33,7 @@ function CustomerList() {
 
       <QueryErrorBoundary>
         <S.TableWrapper>
-          <Table queryParams={queryParams} onRowClick={handleSelectCustomer} />
+          <CustomerTable queryParams={queryParams} onRowClick={handleSelectCustomer} />
         </S.TableWrapper>
       </QueryErrorBoundary>
 

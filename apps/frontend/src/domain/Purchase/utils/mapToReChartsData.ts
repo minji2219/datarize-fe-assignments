@@ -1,6 +1,6 @@
 import { PurchaseFrequency } from '@api/useGetPurchaseFrequency'
 
-export const mapToRechartsData = (rawData: PurchaseFrequency[]) => {
+export const mapToPurchaseChartData = (rawData: PurchaseFrequency[]) => {
   return rawData.map(({ range, count }) => {
     const [min, max] = range.split(' - ').map(Number)
 

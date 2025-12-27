@@ -3,7 +3,7 @@ import CustomerList from './domain/Customer/components/CustomerList'
 import { PurchaseFrequencyChart } from './domain/Purchase/components/PurchaseFrequencyChart'
 import Header from './shared/components/layout/Header'
 
-function DashBoard() {
+function Dashboard() {
   return (
     <S.Container>
       <Header />
@@ -13,7 +13,7 @@ function DashBoard() {
   )
 }
 
-export default DashBoard
+export default Dashboard
 
 const S = {
   Container: styled.div`

@@ -2,7 +2,7 @@ import { Suspense, useState } from 'react'
 import styled from '@emotion/styled'
 
 import DateFilter from './DateFilter'
-import Chart from './Chart'
+import PurchaseFrequencyBarChart from './PurchaseFrequencyBarChart'
 import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
 import LoadingSpinner from '@components/icons/LoadingSpinner'
 
@@ -23,7 +23,7 @@ export function PurchaseFrequencyChart() {
 
       <QueryErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>
-          <Chart queryParams={queryParams} />
+          <PurchaseFrequencyBarChart queryParams={queryParams} />
         </Suspense>
       </QueryErrorBoundary>
     </S.Container>

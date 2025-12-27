@@ -24,7 +24,7 @@ const SIZE = {
   },
 } as const
 
-const TYPE = {
+const VARIANT = {
   primary: {
     background: THEME.COLOR.primary,
     hover: THEME.COLOR.primaryHover,
@@ -45,13 +45,13 @@ const S = {
     border: none;
     border-radius: ${({ theme }) => theme.RADIUS.xsmall};
     font: ${({ size }) => SIZE[size].font};
-    color: ${({ variant }) => TYPE[variant].color};
-    background-color: ${({ variant }) => TYPE[variant].background};
+    color: ${({ variant }) => VARIANT[variant].color};
+    background-color: ${({ variant }) => VARIANT[variant].background};
     cursor: pointer;
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: ${({ variant }) => TYPE[variant].hover};
+      background-color: ${({ variant }) => VARIANT[variant].hover};
     }
   `,
 }
