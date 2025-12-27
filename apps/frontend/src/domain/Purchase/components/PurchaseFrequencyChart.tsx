@@ -39,5 +39,6 @@ const S = {
     display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.GAP.level8};
+    margin-top: 100px;
   `,
 }

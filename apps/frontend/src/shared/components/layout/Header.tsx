@@ -12,9 +12,15 @@ export default Header
 
 const S = {
   Container: styled.header`
+    width: 100%;
     padding: ${({ theme }) => theme.SPACING.lg}px;
     cursor: pointer;
     background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: ${({ theme }) => theme.Z_INDEX.fixed};
+    box-shadow: ${({ theme }) => theme.BOX_SHADOW.medium};
   `,
   Title: styled.h1`
     font: ${({ theme }) => theme.FONTS.heading.large};
