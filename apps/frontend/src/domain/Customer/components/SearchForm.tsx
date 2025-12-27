@@ -19,6 +19,7 @@ export default SearchForm
 
 const S = {
   Container: styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.GAP.level5};
