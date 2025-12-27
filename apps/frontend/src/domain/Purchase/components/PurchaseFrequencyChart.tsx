@@ -2,8 +2,8 @@ import { Suspense, useState } from 'react'
 import styled from '@emotion/styled'
 import DateFilter from './DateFilter'
 import Chart from './Chart'
-import QueryErrorBoundary from '../../../shared/components/errors/QueryErrorBoundary'
-import LoadingSpinner from '../../../shared/components/icons/LoadingSpinner'
+import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
+import LoadingSpinner from '@components/icons/LoadingSpinner'
 
 export function PurchaseFrequencyChart() {
   const [queryParams, setQueryParams] = useState<{ from?: string; to?: string }>({})

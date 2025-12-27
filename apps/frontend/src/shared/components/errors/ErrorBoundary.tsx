@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Component, ReactNode } from 'react'
-import Button from '../common/Button'
+import Button from '@components/common/Button'
 
 type Props = { children: ReactNode; onReset?: () => void }
 type State = { hasError: boolean }

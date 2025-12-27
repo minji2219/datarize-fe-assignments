@@ -1,6 +1,6 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { apiClient } from './apiClient'
-import { formatStringToDate } from '../shared/utils/formatStringToDate'
+import { formatStringToDate } from '@utils/formatStringToDate'
 
 export type PurchaseFrequency = {
   range: string

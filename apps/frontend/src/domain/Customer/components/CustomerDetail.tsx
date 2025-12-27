@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 import { Suspense } from 'react'
-import QueryErrorBoundary from '../../../shared/components/errors/QueryErrorBoundary'
+import QueryErrorBoundary from '@components/errors/QueryErrorBoundary'
 import PurchaseList from './PurchaseList'
-import LoadingSpinner from '../../../shared/components/icons/LoadingSpinner'
-import { Customer } from '../../../api/useGetCustomers'
-import { formatPrice } from '../../../shared/utils/formatPrice'
+import LoadingSpinner from '@components/icons/LoadingSpinner'
+import { Customer } from '@api/useGetCustomers'
+import { formatPrice } from '@utils/formatPrice'
 
 type Props = {
   customer: Customer

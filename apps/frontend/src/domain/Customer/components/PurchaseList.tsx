@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import useGetCustomerPurchases from '../../../api/useGetCustomerPurchases'
-import { formatPrice } from '../../../shared/utils/formatPrice'
+import useGetCustomerPurchases from '@api/useGetCustomerPurchases'
+import { formatPrice } from '@utils/formatPrice'
 
 function PurchaseList({ customerId }: { customerId: number }) {
   const { data: purchases } = useGetCustomerPurchases(customerId)

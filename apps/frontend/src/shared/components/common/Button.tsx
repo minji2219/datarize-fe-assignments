@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { THEME } from '../../styles/theme'
+import { THEME } from '@styles/theme'
 
 type Props = {
   size?: 'sm' | 'lg'

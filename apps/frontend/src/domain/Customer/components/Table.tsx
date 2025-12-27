@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import { Customer, useGetCustomers } from '../../../api/useGetCustomers'
-import { formatPrice } from '../../../shared/utils/formatPrice'
-import LoadingSpinner from '../../../shared/components/icons/LoadingSpinner'
+import { Customer, useGetCustomers } from '@api/useGetCustomers'
+import { formatPrice } from '@utils/formatPrice'
+import LoadingSpinner from '@components/icons/LoadingSpinner'
 
 type Props = {
   queryParams: { sortBy?: 'asc' | 'desc'; name?: string }

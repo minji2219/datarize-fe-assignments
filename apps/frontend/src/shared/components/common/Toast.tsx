@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useEffect } from 'react'
-import { THEME } from '../../styles/theme'
+import { THEME } from '@styles/theme'
 
 type Props = {
   message: string

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { ReactNode, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import Cross from '../icons/Cross'
+import Cross from '@components/icons/Cross'
 
 export type Props = {
   opened: boolean

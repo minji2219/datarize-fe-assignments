@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import SearchBar from '../../../shared/components/common/SearchBar'
+import SearchBar from '@components/common/SearchBar'
 
 type Props = {
   value: string

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react'
-import { generateRandomNumber } from '../utils/generateRandomNumber'
-import Toast from '../components/common/Toast'
+import { generateRandomNumber } from '@utils/generateRandomNumber'
+import Toast from '@components/common/Toast'
 
 type ToastType = {
   mode: 'ERROR' | 'SUCCESS' | 'WARN'

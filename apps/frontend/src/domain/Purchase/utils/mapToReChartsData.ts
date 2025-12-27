@@ -1,4 +1,4 @@
-import { PurchaseFrequency } from '../../../api/useGetPurchaseFrequency'
+import { PurchaseFrequency } from '@api/useGetPurchaseFrequency'
 
 export const mapToRechartsData = (rawData: PurchaseFrequency[]) => {
   return rawData.map(({ range, count }) => {

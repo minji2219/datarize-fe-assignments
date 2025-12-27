@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import Search from '../icons/Search'
+import Search from '@components/icons/Search'
 
 type Props = React.ComponentProps<'input'>
 

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts'
-import { THEME } from '../../../shared/styles/theme'
 import { useMemo } from 'react'
-import { mapToRechartsData } from '../utils/mapToReChartsData'
-import { useGetPurchaseFrequency } from '../../../api/useGetPurchaseFrequency'
+import { useGetPurchaseFrequency } from '@api/useGetPurchaseFrequency'
+import { mapToRechartsData } from '@domain/Purchase/utils/mapToReChartsData'
+import { THEME } from '@styles/theme'
 
 type Props = {
   queryParams: { from?: string; to?: string }
