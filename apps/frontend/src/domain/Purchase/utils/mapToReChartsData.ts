@@ -12,7 +12,7 @@ export const mapToPurchaseChartData = (rawData: PurchaseFrequency[]) => {
 }
 
 const formatPriceRange = (min: number, max: number) => {
-  if (max >= 100_000) return '10만원 이상'
+  if (max >= 100_000) return '9-10만원 이상'
 
   const minMan = Math.floor(min / 10_000)
   const maxMan = Math.floor(max / 10_000)
