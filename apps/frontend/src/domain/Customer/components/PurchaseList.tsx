@@ -61,18 +61,18 @@ const S = {
     flex-direction: column;
     gap: ${({ theme }) => theme.SPACING.xs}px;
   `,
-  Name: styled.div`
+  Name: styled.p`
     font: ${({ theme }) => theme.FONTS.body.medium_bold};
   `,
-  Quantity: styled.div`
+  Quantity: styled.p`
     font: ${({ theme }) => theme.FONTS.body.small};
     color: ${({ theme }) => theme.COLOR.gray.text};
   `,
-  Date: styled.div`
+  Date: styled.p`
     font: ${({ theme }) => theme.FONTS.body.small};
     color: ${({ theme }) => theme.COLOR.gray.text};
   `,
-  Price: styled.div`
+  Price: styled.p`
     font: ${({ theme }) => theme.FONTS.body.large_bold};
     color: ${({ theme }) => theme.COLOR.primary};
     white-space: nowrap;

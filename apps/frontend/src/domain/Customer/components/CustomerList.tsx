@@ -64,7 +64,7 @@ function CustomerList() {
 
       {selectedCustomer && (
         <Modal opened={opened} onClose={handleCloseModal}>
-          <CustomerDetail customerId={selectedCustomer.id} customerName={selectedCustomer.name} />
+          <CustomerDetail customer={selectedCustomer} />
         </Modal>
       )}
     </S.Container>
